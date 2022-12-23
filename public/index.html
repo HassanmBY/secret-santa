@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="script/main.js" defer></script>
+        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/normalize.css">
+        <title>Secret Santa</title>
+    </head>
+
+    <body>
+        <header class="header">
+            <h1 id="title" class="header__title">Welcome to the Secret Santa Game</h1>
+        </header>
+        <main class="main">
+            <button class="main__button" id="startBtn">
+                Start&nbsp;!
+            </button>
+
+
+            <form class="main__form" id="form">
+                <input class="main__input--text" type="text" id="name" pattern="[a-zA-Z-\s]+" required
+                    placeholder="Username" title="This field can only contain lowercase and uppercase letters">
+                <input class="main__input--button" type="button" value="Submit" id="submitForm">
+            </form>
+
+            <section aria-label="Connection info zone" id="infoZone" class="main__infoZone">
+                <button class="main__button readyBtn" id="ready">
+                    <span id="readyBtnText"> Ready&nbsp;!</span>
+                </button>
+                <p class="main__readyState">
+                    <span id="readyUsers">0</span> ready out of
+                    <span id="connectedUsersCount">0</span> players
+                </p>
+                <dl class="main__connectedUsers" id="connectedUsers">
+                    <dt>Connected Users</dt>
+                </dl>
+                <p id="timerLeft"></p>
+            </section>
+
+            <p id="giverReceiver"></p>
+        </main>
+
+
+
+
+
+        <footer class="footer">
+            <div id="messagesZone">
+            </div>
+        </footer>
+    </body>
+
+</html>
